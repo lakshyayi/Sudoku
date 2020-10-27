@@ -67,10 +67,8 @@ struct BoardView: View {
                 Color.white
                 VStack(alignment: .center, spacing: 0){
                     ForEach(1...3 , id: \.self){ i in
-        
                         HStack(alignment: .center, spacing: 0){
                             ForEach(1...3 , id: \.self){ j in
-                                
                                 Text(String(i*3+j-3))
                                     .font(.system(size: 18))
                                     .frame(width: self.size, height: self.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -84,9 +82,10 @@ struct BoardView: View {
                         }
                         
                     }
-                }.frame(width: self.size*3, height:  self.size*4, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(3)
-                .border(Color.black.opacity(0.7), width: 3)
-            }
+                }
+            }.frame(width: self.size*3, height:  self.size*4, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .cornerRadius(10).shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            .border(Color.black.opacity(0.7), width: 3)
         }
       
     }
