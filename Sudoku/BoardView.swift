@@ -41,7 +41,7 @@ struct BoardView: View {
                                                     .frame(width: self.size, height: self.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                                     .background(
                                                         Rectangle()
-                                                            .fill(Color(hex:0xA193E1).opacity(0.2))
+                                                            .fill(Color(hex:0xaaa9ff).opacity(0.2))
                                                             .frame(width: self.size, height: self.size)
                                                             .border(Color.gray, width: 0.5)
                                             
@@ -54,7 +54,7 @@ struct BoardView: View {
                                     .frame(width: self.size, height: self.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     .background(
                                         Rectangle()
-                                            .fill(Color(hex:0xA193E1).opacity(0.3))
+                                            .fill(Color(hex:0xaaa9ff).opacity(0.3))
                                             .frame(width: self.size, height: self.size)    .border(Color.gray, width: 0.5))
                             }
                    
