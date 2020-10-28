@@ -54,15 +54,16 @@ struct NumCell:View{
             self.showKeyboard = true
         },
         label: {
-            Text(String(value)).font(.system(size: 18))
-                            .frame(width: size, height: size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .background(
-                                Rectangle()
-                                    .fill(Color(hex:0xaaa9ff).opacity(0.2))
-                                    .frame(width: size, height: size)
-                                    .border(Color.gray, width: 0.5)
-                    
-                        )
+            Text(String(value))
+                .font(.system(size: 18))
+                .foregroundColor(Color.black.opacity(0.75))
+                .frame(width: size, height: size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(
+                    Rectangle()
+                        .fill(Color(hex:0xaaa9ff).opacity(value==" " ? 0.2 : 0.3))
+                        .frame(width: size, height: size)
+                        .border(Color.gray, width: 0.5)
+                )
             
         })
     }
@@ -95,17 +96,8 @@ struct BoardView: View {
                             }
                             if self.board[i][j] == nil{
                                 NumCell(value : " ", size : $size , showKeyboard : $showKeyboard)
-                               
                             }else{
-                                
                                 NumCell(value : String(self.board[i][j]!), size : $size , showKeyboard : $showKeyboard)
-//                                Text(String(self.board[i][j]!))
-//                                    .font(.system(size: 18))
-//                                    .frame(width: self.size, height: self.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                                    .background(
-//                                        Rectangle()
-//                                            .fill(Color(hex:0xaaa9ff).opacity(0.3))
-//                                            .frame(width: self.size, height: self.size)    .border(Color.gray, width: 0.5))
                             }
                    
                         }
