@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F13141C254EFF6900E195CA /* KeyBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F13141B254EFF6900E195CA /* KeyBoardView.swift */; };
+		5F131424254EFFD600E195CA /* NumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F131423254EFFD600E195CA /* NumCell.swift */; };
 		5F37FD7F254850B000711129 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37FD7E254850B000711129 /* Color.swift */; };
 		5F51CA202532B5E2000938C8 /* SudokuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA1F2532B5E2000938C8 /* SudokuApp.swift */; };
 		5F51CA222532B5E2000938C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA212532B5E2000938C8 /* ContentView.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F13141B254EFF6900E195CA /* KeyBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardView.swift; sourceTree = "<group>"; };
+		5F131423254EFFD600E195CA /* NumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumCell.swift; sourceTree = "<group>"; };
 		5F37FD7E254850B000711129 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5F51CA1C2532B5E2000938C8 /* Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F51CA1F2532B5E2000938C8 /* SudokuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuApp.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				5FB0E3792544357200437CFD /* Sudoku.swift */,
 				5FB0E37E254438C800437CFD /* BoardView.swift */,
 				5F37FD7E254850B000711129 /* Color.swift */,
+				5F13141B254EFF6900E195CA /* KeyBoardView.swift */,
+				5F131423254EFFD600E195CA /* NumCell.swift */,
 			);
 			path = Sudoku;
 			sourceTree = "<group>";
@@ -269,10 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F51CA222532B5E2000938C8 /* ContentView.swift in Sources */,
+				5F13141C254EFF6900E195CA /* KeyBoardView.swift in Sources */,
 				5FB0E37F254438C800437CFD /* BoardView.swift in Sources */,
 				5F51CA202532B5E2000938C8 /* SudokuApp.swift in Sources */,
 				5F37FD7F254850B000711129 /* Color.swift in Sources */,
 				5FB0E37A2544357200437CFD /* Sudoku.swift in Sources */,
+				5F131424254EFFD600E195CA /* NumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
