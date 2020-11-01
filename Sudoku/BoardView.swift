@@ -34,7 +34,8 @@ struct BoardView: View {
                             }
                             if self.board[i][j] == nil{
                                 NumCell(
-                                    value : nil,
+                                    initvalue : nil,
+                                    inputvalue : nil,
                                     cellRow: j,
                                     cellCol: i,
                                     size : $size ,
@@ -43,7 +44,8 @@ struct BoardView: View {
                                     selCol:$selCol
                                 )
                             }else{
-                                NumCell(value : String(self.board[i][j]!),
+                                NumCell(initvalue : String(self.board[i][j]!),
+                                        inputvalue : nil,
                                         cellRow: j,
                                         cellCol: i,
                                         size : $size ,
