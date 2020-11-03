@@ -1,20 +1,21 @@
 //
-//  BoardView.swift
+//  SudokuView.swift
 //  Sudoku
 //
-//  Created by Lakshya on 2020/10/24.
+//  Created by administrator on 2020/11/3.
 //
+
 import SwiftUI
 
-struct BoardView: View {
+struct SudokuView: View {
     var sudoku:Sudoku
-    var board:[[Int?]]
     @State private var size:CGFloat=UIScreen.main.bounds.width/9.5
     @State private var showKeyboard = false
     @State private var selRow = -1
     @State private var selCol = -1
     @State private var selNum = "0"
-    @State private var result = [[]]
+    @State private var result:[[Int?]] = [[nil]]
+    @State private var board:[[Int?]] = [[nil]]
     init(){
         self.sudoku = Sudoku(digets:3)
         self.board = sudoku.generate()!
@@ -74,16 +75,10 @@ struct BoardView: View {
       
     }
 
-    
 }
 
- 
-
-struct BoardView_Previews: PreviewProvider {
+struct SudokuView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            BoardView()
-        }
+        SudokuView()
     }
 }
-

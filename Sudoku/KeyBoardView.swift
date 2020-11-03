@@ -13,6 +13,8 @@ struct KeyBoardView:View{
     @Binding var keysize: CGFloat
     @Binding var selRow: Int
     @Binding var selCol: Int
+    @Binding var selNum: String
+    
     func getKeyBoardX()->CGFloat{
         if selRow>=5{
             return keysize*CGFloat(Double(selRow)-1.6)
@@ -31,11 +33,12 @@ struct KeyBoardView:View{
                     HStack(alignment: .center, spacing: 0){
                         ForEach(1...3 , id: \.self){ j in
                             Button(action:{
-                             
+                               
                             },
                             label: {
                                 Text(String(i*3+j-3))
                                     .font(.system(size: 18))
+                                    .foregroundColor(Color.black.opacity(0.75))
                                     .frame(width: keysize, height: keysize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                     .background(
                                         Rectangle()
@@ -52,15 +55,23 @@ struct KeyBoardView:View{
                     }
 
                 }
-                Text(String("清  除"))
-                    .font(.system(size: 18))
-                    .frame(width: keysize*3, height: keysize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .background(
-                        Rectangle()
-                            .fill(Color.blue.opacity(0.2))
-                            .frame(width: keysize*3, height: keysize)
-                            .border(Color.gray, width: 0.5)
-                    )
+                Button(action:{
+                 
+                },
+                label: {
+                    Text(String("清  除"))
+                        .font(.system(size: 18))
+                        .foregroundColor(Color.black.opacity(0.75))
+                        .frame(width: keysize*3, height: keysize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(
+                            Rectangle()
+                                .fill(Color.blue.opacity(0.2))
+                                .frame(width: keysize*3, height: keysize)
+                                .border(Color.gray, width: 0.5)
+                        )
+                    
+                })
+                
             }
             
             .background(
