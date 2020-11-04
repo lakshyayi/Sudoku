@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct NumCell:View{
-    var initvalue: String?
-    var inputvalue: String?
+
     var cellRow: Int
     var cellCol: Int
-    @Binding var size: CGFloat
-    @Binding var showKeyboard: Bool
-    @Binding var selRow: Int
-    @Binding var selCol: Int
-    @Binding var selNum: String
+    @ObservedObject var sudokuModel: SudokuModel
     
+    var initvalue: String?
+    var inputvalue: String?
+   
+    init(cellRow:Int,cellCol:Int,sudokuModel:SudokuModel){
+        self.cellCol=cellCol
+        self.cellRow=cellRow
+        self.sudokuModel=sudokuModel
+        self.initvalue = (sudokuModel.board[cellRow][cellCol] != nil) ? String(sudokuModel.board[cellRow][cellCol]!) : nil
+        self.inputvalue = (sudokuModel.result[cellRow][cellCol] != nil) ? String(sudokuModel.result[cellRow][cellCol]!) : nil
+        
+    }
     func getBackColor()->Color{
-        if selRow == cellRow && selCol==cellCol{//选中格子
+        if sudokuModel.selRow == cellRow && sudokuModel.selCol == cellCol{//选中格子
             return Color(hex:0xf33333)
         }
-        if selRow == cellRow || selCol==cellCol{//选中行列
+        if sudokuModel.selRow == cellRow || sudokuModel.selCol == cellCol{//选中行列
             return Color(hex:0xccddee)
         }
         let  val = initvalue ?? (inputvalue ?? "0")
-        if selNum == val && val != "0"{//选中数字
+        if sudokuModel.selNum == val && val != "0"{//选中数字
             return Color(hex:0xa12345)
         }
         
@@ -34,24 +40,17 @@ struct NumCell:View{
     }
     var body : some View {
         Button(action:{
-            if initvalue == nil{
-                self.showKeyboard = true
-            }else{
-                self.showKeyboard = false
-                self.selNum = initvalue ?? (inputvalue ?? "0")               
-           }
-            self.selRow = cellRow
-            self.selCol = cellCol
+            sudokuModel.cellClick(initValue: initvalue, inputValue: inputvalue, cellRow: cellRow, cellCol: cellCol)
         },
         label: {
             Text(initvalue ?? (inputvalue ?? " "))
                 .font(.system(size: 18))
                 .foregroundColor(Color.black.opacity(0.75))
-                .frame(width: size, height: size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: self.sudokuModel.size, height: self.sudokuModel.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(
                     Rectangle()
                         .fill(getBackColor().opacity(initvalue == nil ? 0.2 : 0.3))
-                        .frame(width: size, height: size)
+                        .frame(width: self.sudokuModel.size, height: self.sudokuModel.size)
                         .border(Color.gray, width: 0.5)
                 )
             

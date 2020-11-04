@@ -6,16 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Sudoku{
-    var digets: Int
-    var height: Int
-    var width: Int
-    var difficulty: Double
-    var size: Int
-    var positions = Array<Int>()
-    var indices = Array<Int>()
-    var board = [[Int?]]()
+    private var digets: Int
+    private var height: Int
+    private var width: Int
+    private var difficulty: Double
+    private var size: Int
+    private var positions = Array<Int>()
+    private var indices = Array<Int>()
+    private var board = [[Int?]]()
     init(digets: Int?=3,difficulty:Double?=0.5) {
         assert(0.0 < difficulty! && difficulty! < 1.0,"Difficulty must be between 0 and 1")
         self.digets = digets!
@@ -212,7 +213,7 @@ class Sudoku{
         }
         return valid_fillers
     }
-    func show(){
+    func printBoard(){
         if(self.board != nil){
             for (idx,row) in self.board.enumerated(){
                 if(idx%self.digets==0){

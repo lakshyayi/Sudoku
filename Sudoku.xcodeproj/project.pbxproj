@@ -17,8 +17,9 @@
 		5F51CA322532B5E6000938C8 /* SudokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA312532B5E6000938C8 /* SudokuTests.swift */; };
 		5F51CA3D2532B5E6000938C8 /* SudokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA3C2532B5E6000938C8 /* SudokuUITests.swift */; };
 		5FB0E37A2544357200437CFD /* Sudoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3792544357200437CFD /* Sudoku.swift */; };
-		5FB0E37F254438C800437CFD /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E37E254438C800437CFD /* BoardView.swift */; };
 		C33380B625512E6F0023C10B /* SudokuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33380B525512E6F0023C10B /* SudokuView.swift */; };
+		C370CBED2552525500D181B3 /* SudokuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370CBEC2552525500D181B3 /* SudokuController.swift */; };
+		C370CBF2255252E000D181B3 /* SudokuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370CBF1255252E000D181B3 /* SudokuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +56,9 @@
 		5F51CA3C2532B5E6000938C8 /* SudokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuUITests.swift; sourceTree = "<group>"; };
 		5F51CA3E2532B5E6000938C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FB0E3792544357200437CFD /* Sudoku.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sudoku.swift; sourceTree = "<group>"; };
-		5FB0E37E254438C800437CFD /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		C33380B525512E6F0023C10B /* SudokuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuView.swift; sourceTree = "<group>"; };
+		C370CBEC2552525500D181B3 /* SudokuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuController.swift; sourceTree = "<group>"; };
+		C370CBF1255252E000D181B3 /* SudokuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +115,12 @@
 				5F51CA282532B5E5000938C8 /* Info.plist */,
 				5F51CA252532B5E5000938C8 /* Preview Content */,
 				5FB0E3792544357200437CFD /* Sudoku.swift */,
-				5FB0E37E254438C800437CFD /* BoardView.swift */,
+				C370CBEC2552525500D181B3 /* SudokuController.swift */,
 				5F37FD7E254850B000711129 /* Color.swift */,
 				5F13141B254EFF6900E195CA /* KeyBoardView.swift */,
 				5F131423254EFFD600E195CA /* NumCell.swift */,
 				C33380B525512E6F0023C10B /* SudokuView.swift */,
+				C370CBF1255252E000D181B3 /* SudokuModel.swift */,
 			);
 			path = Sudoku;
 			sourceTree = "<group>";
@@ -277,10 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C370CBF2255252E000D181B3 /* SudokuModel.swift in Sources */,
 				5F51CA222532B5E2000938C8 /* ContentView.swift in Sources */,
 				C33380B625512E6F0023C10B /* SudokuView.swift in Sources */,
 				5F13141C254EFF6900E195CA /* KeyBoardView.swift in Sources */,
-				5FB0E37F254438C800437CFD /* BoardView.swift in Sources */,
+				C370CBED2552525500D181B3 /* SudokuController.swift in Sources */,
 				5F51CA202532B5E2000938C8 /* SudokuApp.swift in Sources */,
 				5F37FD7F254850B000711129 /* Color.swift in Sources */,
 				5FB0E37A2544357200437CFD /* Sudoku.swift in Sources */,
