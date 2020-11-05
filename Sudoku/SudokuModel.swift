@@ -18,13 +18,19 @@ class SudokuModel: ObservableObject{
     @Published var selNum = "0"
     @Published var result:[[Int?]] = [[nil]]
     init(){
-        self.sudoku = Sudoku(digets:3)
+        self.sudoku = Sudoku(digets:3,difficulty: 0.1)
         self.board = sudoku.generate()!
         self.result =  self.board
         
     }
-    func newGame(){
-         
+    func newGame(difficulty:Double){
+        self.sudoku = Sudoku(digets:3,difficulty: difficulty)
+        self.board = sudoku.generate()!
+        self.result =  self.board
+        self.showKeyboard = false
+        self.selRow = -1
+        self.selCol = -1
+        self.selNum = "0"
     }
     func cellClick(initValue:String?,inputValue:String?,cellRow:Int,cellCol:Int){
         if initValue == nil{
@@ -47,6 +53,10 @@ class SudokuModel: ObservableObject{
             selNum = numValue
             showKeyboard = false
         }
+       
+    }
+    func checkConflict(numValue:String){
+      
        
     }
 
