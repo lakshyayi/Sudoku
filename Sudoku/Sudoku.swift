@@ -58,7 +58,7 @@ class Sudoku{
         if (board != nil) {
             sboard = board!
         }
-        let blanks = self.getBlanks()
+        let blanks = self.getBlanks(board:self.board)
         let are_blanks_filled = Array(repeating:false, count:blanks.count)
         let blank_fillers = self.calculateBlankCellFillers(blanks: blanks)
         var solution_board = self.getSolution(board:self.copyBoard(board: sboard)!,blanks: blanks, blank_fillers:blank_fillers, are_blanks_filled: are_blanks_filled)
@@ -92,11 +92,11 @@ class Sudoku{
         let copyBoard=board
         return copyBoard
     }
-    private func getBlanks()->[(Int,Int)]{
+    func getBlanks(board:[[Int?]])->[(Int,Int)]{
         var blanks:[(Int,Int)]=[]
         for i in 0 ..< self.size {
             for j in 0 ..< self.size {
-                if self.board[i][j] == nil{
+                if board[i][j] == nil{
                     let sc=(i,j)
                     blanks.append(sc)
                 }

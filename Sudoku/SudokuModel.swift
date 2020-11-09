@@ -15,6 +15,7 @@ class SudokuModel: ObservableObject{
     @Published var showKeyboard = false
     @Published var selRow = -1
     @Published var selCol = -1
+    @Published var success = false
     @Published var selNum = "0"
     @Published var result:[[Int?]] = [[nil]]
     @Published var conflicts = Set<String>()
@@ -55,6 +56,10 @@ class SudokuModel: ObservableObject{
             showKeyboard = false
             self.conflicts = Set<String>()
             self.checkConflict()
+            var blk=sudoku.getBlanks(board: self.result)
+            if blk.count == 0 && self.conflicts.count == 0 {
+                self.success = true
+            }
         }
        
     }
