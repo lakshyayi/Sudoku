@@ -24,19 +24,24 @@ struct NumCell:View{
         self.inputvalue = (sudokuModel.result[cellRow][cellCol] != nil) ? String(sudokuModel.result[cellRow][cellCol]!) : nil
         
     }
-    func getBackColor()->Color{
+    func getBackColor(opa:Double)->Color{
+        let pos = String(cellRow)+"."+String(cellCol)
+        if sudokuModel.conflicts.contains(pos){//冲突
+            return Color.red.opacity(0.8)
+        }
         if sudokuModel.selRow == cellRow && sudokuModel.selCol == cellCol{//选中格子
-            return Color(hex:0xf33333)
+            return Color(hex:0xf33333).opacity(opa)
         }
         if sudokuModel.selRow == cellRow || sudokuModel.selCol == cellCol{//选中行列
-            return Color(hex:0xccddee)
+            return Color(hex:0xccddee).opacity(opa)
         }
         let  val = initvalue ?? (inputvalue ?? "0")
         if sudokuModel.selNum == val && val != "0"{//选中数字
-            return Color(hex:0xa12345)
+            return Color(hex:0xa12345).opacity(opa)
         }
+   
         
-        return Color(hex:0xaaa9ff)
+        return Color(hex:0xaaa9ff).opacity(opa)
     }
     var body : some View {
         Button(action:{
@@ -49,7 +54,7 @@ struct NumCell:View{
                 .frame(width: self.sudokuModel.size, height: self.sudokuModel.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(
                     Rectangle()
-                        .fill(getBackColor().opacity(initvalue == nil ? 0.2 : 0.3))
+                        .fill(getBackColor(opa:(initvalue == nil ? 0.2 : 0.3)))
                         .frame(width: self.sudokuModel.size, height: self.sudokuModel.size)
                         .border(Color.gray, width: 0.5)
                 )
