@@ -14,8 +14,6 @@
 		5F51CA222532B5E2000938C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA212532B5E2000938C8 /* ContentView.swift */; };
 		5F51CA242532B5E5000938C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F51CA232532B5E5000938C8 /* Assets.xcassets */; };
 		5F51CA272532B5E5000938C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F51CA262532B5E5000938C8 /* Preview Assets.xcassets */; };
-		5F51CA322532B5E6000938C8 /* SudokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA312532B5E6000938C8 /* SudokuTests.swift */; };
-		5F51CA3D2532B5E6000938C8 /* SudokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F51CA3C2532B5E6000938C8 /* SudokuUITests.swift */; };
 		5FB035A925592C5D009847EE /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB035A825592C5D009847EE /* BoardView.swift */; };
 		5FB035AE25592D1F009847EE /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB035AD25592D1F009847EE /* SuccessView.swift */; };
 		5FB0E37A2544357200437CFD /* Sudoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0E3792544357200437CFD /* Sudoku.swift */; };
@@ -52,11 +50,7 @@
 		5F51CA262532B5E5000938C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F51CA282532B5E5000938C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F51CA2D2532B5E6000938C8 /* SudokuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SudokuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F51CA312532B5E6000938C8 /* SudokuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuTests.swift; sourceTree = "<group>"; };
-		5F51CA332532B5E6000938C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F51CA382532B5E6000938C8 /* SudokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SudokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F51CA3C2532B5E6000938C8 /* SudokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuUITests.swift; sourceTree = "<group>"; };
-		5F51CA3E2532B5E6000938C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FB035A825592C5D009847EE /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		5FB035AD25592D1F009847EE /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		5FB0E3792544357200437CFD /* Sudoku.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sudoku.swift; sourceTree = "<group>"; };
@@ -94,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				5F51CA1E2532B5E2000938C8 /* Sudoku */,
-				5F51CA302532B5E6000938C8 /* SudokuTests */,
-				5F51CA3B2532B5E6000938C8 /* SudokuUITests */,
 				5F51CA1D2532B5E2000938C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,24 +129,6 @@
 				5F51CA262532B5E5000938C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5F51CA302532B5E6000938C8 /* SudokuTests */ = {
-			isa = PBXGroup;
-			children = (
-				5F51CA312532B5E6000938C8 /* SudokuTests.swift */,
-				5F51CA332532B5E6000938C8 /* Info.plist */,
-			);
-			path = SudokuTests;
-			sourceTree = "<group>";
-		};
-		5F51CA3B2532B5E6000938C8 /* SudokuUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5F51CA3C2532B5E6000938C8 /* SudokuUITests.swift */,
-				5F51CA3E2532B5E6000938C8 /* Info.plist */,
-			);
-			path = SudokuUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F51CA322532B5E6000938C8 /* SudokuTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +285,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F51CA3D2532B5E6000938C8 /* SudokuUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +428,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Sudoku/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ACWPH5KQ95;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Sudoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -480,7 +452,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Sudoku/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ACWPH5KQ95;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Sudoku/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
