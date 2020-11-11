@@ -26,13 +26,14 @@ class SudokuModel: ObservableObject{
         
     }
     func newGame(difficulty:Double){
-        self.sudoku = Sudoku(digets:3,difficulty: difficulty)
-        self.board = sudoku.generate()!
+        self.sudoku = Sudoku(digets:3)
+        self.board = sudoku.generate(difficulty: difficulty)!
         self.result =  self.board
         self.showKeyboard = false
         self.selRow = -1
         self.selCol = -1
         self.selNum = "0"
+        self.success = false
     }
     func cellClick(initValue:String?,inputValue:String?,cellRow:Int,cellCol:Int){
         if initValue == nil{
@@ -59,6 +60,9 @@ class SudokuModel: ObservableObject{
             var blk=sudoku.getBlanks(board: self.result)
             if blk.count == 0 && self.conflicts.count == 0 {
                 self.success = true
+                self.selRow = -1
+                self.selCol = -1
+                self.selNum = "0"
             }
         }
        
