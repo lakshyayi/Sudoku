@@ -62,8 +62,8 @@ struct SudokuView: View {
                  .default(Text("初级")) {  sudokuModel.newGame(difficulty:0.45)},
                  .default(Text("中级")) { sudokuModel.newGame(difficulty:0.55)},
                  .default(Text("高级")) { sudokuModel.newGame(difficulty:0.65)},
-                 .default(Text("砖家")) { sudokuModel.newGame(difficulty:0.8)},
-                 .destructive(Text("取消"), action: {
+                 .default(Text("砖家")) { sudokuModel.newGame(difficulty:0.79)},
+                .destructive(Text("取消"), action: {
                    
                  })
                 
