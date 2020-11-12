@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SudokuView: View {
-
+    @State private var actionSheetShown=false
     @StateObject var sudokuModel: SudokuModel = SudokuModel()
     var tap: some Gesture{
         TapGesture(count: 1).onEnded{
@@ -46,25 +46,29 @@ struct SudokuView: View {
                     if $sudokuModel.showKeyboard.wrappedValue{
                         KeyBoardView(sudokuModel: sudokuModel)
                     }
-
+              
+             
+                   
                 }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .center)
-                
-                Button(action:{
-                    sudokuModel.newGame(difficulty:0.8)
-                },
-                label: {
-                    Text("New")
-                        .font(.system(size: 18))
-                        .foregroundColor(Color.black.opacity(0.75)) .frame(width: self.sudokuModel.size * 2, height: self.sudokuModel.size, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .background(
-                            RoundedRectangle(cornerRadius: 12.0)
-                                .frame(width: self.sudokuModel.size * 2, height: self.sudokuModel.size)
-                        )
-                })
-               
+        
                 
             }
-       
+            Button("新游戏") {
+                self.actionSheetShown = true
+            }.position(x: proxy.size.width * 0.5, y:proxy.size.height * 0.85).actionSheet(isPresented: $actionSheetShown) { () -> ActionSheet in
+                ActionSheet(title: Text("Menu"), message: Text("Select your options"),
+               buttons: [
+                 .default(Text("入门")) { sudokuModel.newGame(difficulty:0.3)},
+                 .default(Text("初级")) {  sudokuModel.newGame(difficulty:0.45)},
+                 .default(Text("中级")) { sudokuModel.newGame(difficulty:0.55)},
+                 .default(Text("高级")) { sudokuModel.newGame(difficulty:0.65)},
+                 .default(Text("砖家")) { sudokuModel.newGame(difficulty:0.8)},
+                 .destructive(Text("取消"), action: {
+                   
+                 })
+                
+                ])
+              }
         }
         .background(Color.white).gesture(tap).onAppear{
      
